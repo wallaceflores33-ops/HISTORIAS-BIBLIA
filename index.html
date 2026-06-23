@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bíblia Play Kids — Historinhas e Atividades Bíblicas</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1348709817197423');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1348709817197423&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script src="https://supermago.b-cdn.net/supermago.js?ver=20250224" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --p:#7C3AED;--pd:#5B21B6;--acc:#F59E0B;--acc2:#F97316;
+  --green:#10B981;--bg:#FDF4FF;--white:#fff;
+  --dark:#1E1B4B;--gray:#6B7280;--lp:#EDE9FE;
+  --fd:'Fredoka One',cursive;--fb:'Nunito',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--fb);background:var(--bg);color:var(--dark);overflow-x:hidden}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes scrollLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.reveal{opacity:0;transform:translateY(28px);transition:all .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* TOP BADGE */
+.top-badge{
+  background:linear-gradient(135deg,var(--p),#9333EA);
+  color:#fff;text-align:center;padding:10px 20px;
+  font-size:13px;font-weight:800;letter-spacing:.5px;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(160deg,#0F0A2E 0%,#2E1065 40%,#4C1D95 100%);
+  padding:56px 20px 80px;text-align:center;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle at 20% 20%,rgba(167,139,250,.15) 0%,transparent 50%),
+    radial-gradient(circle at 80% 80%,rgba(245,158,11,.1) 0%,transparent 50%);
+  pointer-events:none;
+}
+/* stars */
+.stars{position:absolute;inset:0;pointer-events:none}
+.star{position:absolute;background:#FCD34D;border-radius:50%;opacity:.5}
+
+.hero-badge{
+  display:inline-block;background:linear-gradient(135deg,var(--acc),var(--acc2));
+  color:#fff;padding:8px 22px;border-radius:50px;font-size:12px;font-weight:900;
+  margin-bottom:26px;text-transform:uppercase;letter-spacing:1.5px;
+  animation:pulse 2s ease-in-out infinite;
+}
+.hero h1{
+  font-family:var(--fd);font-size:clamp(26px,5vw,52px);color:#fff;
+  line-height:1.2;max-width:820px;margin:0 auto 18px;
+  animation:fadeUp .8s ease .1s both;
+}
+.hero h1 span{color:#FCD34D}
+.hero p{
+  color:#C4B5FD;font-size:clamp(14px,2vw,18px);
+  max-width:620px;margin:0 auto 32px;line-height:1.7;
+  animation:fadeUp .8s ease .3s both;
+}
+.hero-img{
+  max-width:480px;width:90%;border-radius:22px;
+  margin:0 auto 36px;display:block;
+  animation:float 4s ease-in-out infinite,fadeUp .9s ease .2s both;
+  box-shadow:0 30px 80px rgba(0,0,0,.55);
+}
+.btn-cta{
+  display:inline-block;
+  background:linear-gradient(135deg,#F59E0B,#F97316);
+  color:#fff;font-family:var(--fb);font-size:17px;font-weight:900;
+  padding:18px 46px;border-radius:60px;text-decoration:none;
+  text-transform:uppercase;letter-spacing:1px;
+  box-shadow:0 8px 32px rgba(245,158,11,.55);
+  transition:all .3s ease;
+}
+.btn-cta:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 18px 44px rgba(245,158,11,.7)}
+.hero-meta{margin-top:14px;color:#A78BFA;font-size:12px;font-weight:700;animation:fadeUp .8s ease .6s both}
+.hero-verse{margin-top:28px;color:#DDD6FE;font-size:14px;font-style:italic;animation:fadeUp .8s ease .7s both}
+.hero-urgency{
+  display:inline-block;margin-top:18px;
+  background:rgba(239,68,68,.18);border:1px solid rgba(239,68,68,.4);
+  color:#FCA5A5;padding:8px 22px;border-radius:30px;
+  font-size:13px;font-weight:800;animation:fadeUp .8s ease .85s both;
+}
+
+/* WHAT IS */
+.s-what{background:#fff;padding:80px 20px}
+.container{max-width:1080px;margin:0 auto}
+.s-label{text-align:center;color:var(--p);font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
+.s-title{font-family:var(--fd);font-size:clamp(24px,4vw,42px);text-align:center;color:var(--dark);margin-bottom:14px;line-height:1.2}
+.s-title span{color:var(--p)}
+.s-sub{text-align:center;color:var(--gray);font-size:16px;max-width:580px;margin:0 auto 48px;line-height:1.65}
+
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
+.feat-card{
+  background:linear-gradient(145deg,#F5F3FF,#EDE9FE);
+  border-radius:22px;padding:36px 26px;text-align:center;
+  border:2px solid transparent;transition:all .35s ease;
+  position:relative;overflow:hidden;
+}
+.feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--p),#9333EA)}
+.feat-card:hover{transform:translateY(-7px);box-shadow:0 20px 50px rgba(124,58,237,.2);border-color:var(--p)}
+.feat-icon{font-size:50px;margin-bottom:14px;display:block}
+.feat-card h3{font-family:var(--fd);font-size:22px;color:var(--dark);margin-bottom:10px}
+.feat-card p{color:var(--gray);font-size:14px;line-height:1.65}
+
+/* BONUS */
+.s-bonus{background:linear-gradient(175deg,#0F0A2E,#1E1B4B,#312E81);padding:80px 20px;overflow:hidden}
+.s-bonus .s-title{color:#fff}
+.s-bonus .s-label{color:#A78BFA}
+.s-bonus .s-sub{color:#C4B5FD}
+
+/* Carousel */
+.car-wrap{overflow:hidden;margin:0 -20px 60px;position:relative}
+.car-track{display:flex;gap:16px;animation:scrollLeft 22s linear infinite;width:max-content;padding:0 20px}
+.car-wrap:hover .car-track{animation-play-state:paused}
+.car-img{width:220px;height:155px;object-fit:cover;border-radius:16px;box-shadow:0 6px 28px rgba(0,0,0,.5);flex-shrink:0;transition:transform .3s}
+.car-img:hover{transform:scale(1.04)}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-bottom:48px}
+.bonus-card{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;padding:22px 22px;display:flex;gap:14px;align-items:flex-start;
+  transition:all .3s ease;backdrop-filter:blur(8px);
+}
+.bonus-card:hover{background:rgba(255,255,255,.13);transform:translateX(5px);border-color:var(--acc)}
+.bonus-num{
+  background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;
+  font-family:var(--fd);font-size:17px;width:44px;height:44px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.bonus-card h3{font-family:var(--fd);font-size:18px;color:#fff;margin-bottom:6px}
+.bonus-card p{font-size:13px;color:#C4B5FD;line-height:1.55}
+
+.btn-cta2{
+  display:block;max-width:420px;margin:0 auto;
+  background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;
+  font-family:var(--fb);font-size:17px;font-weight:900;padding:18px 40px;
+  border-radius:60px;text-decoration:none;text-align:center;
+  text-transform:uppercase;letter-spacing:1px;
+  box-shadow:0 8px 30px rgba(245,158,11,.45);transition:all .3s ease;
+}
+.btn-cta2:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 18px 44px rgba(245,158,11,.65)}
+
+/* TESTIMONIALS */
+.s-test{background:linear-gradient(135deg,#F0FDF4,#D1FAE5);padding:80px 20px}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin-bottom:36px}
+.test-card{
+  background:#fff;border-radius:22px;padding:30px;
+  box-shadow:0 4px 30px rgba(0,0,0,.07);
+  border-left:5px solid var(--green);transition:all .3s ease;
+}
+.test-card:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(0,0,0,.12)}
+.test-stars{color:#F59E0B;font-size:18px;margin-bottom:12px}
+.test-text{color:#374151;font-size:14px;line-height:1.7;margin-bottom:20px;font-style:italic}
+.test-author{display:flex;align-items:center;gap:12px}
+.author-av{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--p),#9333EA);
+  color:#fff;font-weight:900;font-size:15px;
+  display:flex;align-items:center;justify-content:center;
+}
+.author-name{font-weight:900;color:var(--dark);font-size:14px}
+.author-role{color:var(--gray);font-size:12px}
+.social-proof{
+  text-align:center;background:linear-gradient(135deg,var(--green),#059669);
+  color:#fff;padding:18px 36px;border-radius:16px;
+  font-size:15px;font-weight:800;max-width:480px;margin:0 auto;
+}
+
+/* PRICING */
+.s-price{background:linear-gradient(160deg,#0F0A2E,#2E1065,#4C1D95);padding:80px 20px;text-align:center}
+.price-label{
+  display:inline-block;background:rgba(245,158,11,.18);border:1px solid rgba(245,158,11,.45);
+  color:#FCD34D;padding:8px 24px;border-radius:50px;
+  font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:28px;
+}
+.price-title{font-family:var(--fd);font-size:clamp(24px,4vw,40px);color:#fff;margin-bottom:40px}
+.price-card{
+  max-width:500px;margin:0 auto;
+  background:rgba(255,255,255,.09);border:2px solid rgba(245,158,11,.5);
+  border-radius:28px;padding:48px 36px;backdrop-filter:blur(20px);
+  position:relative;overflow:hidden;
+}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--acc),var(--acc2))}
+.price-feats{list-style:none;margin-bottom:32px;text-align:left}
+.price-feats li{
+  color:#E9D5FF;font-size:15px;padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  display:flex;align-items:center;gap:10px;
+}
+.price-old{color:#9CA3AF;font-size:17px;text-decoration:line-through;margin-bottom:6px}
+.price-val{font-family:var(--fd);font-size:clamp(52px,9vw,72px);color:#FCD34D;line-height:1;margin-bottom:8px}
+.price-val sup{font-size:28px;vertical-align:super}
+.price-note{color:#A78BFA;font-size:13px;margin-bottom:32px}
+.btn-checkout{
+  display:block;
+  background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;
+  font-family:var(--fb);font-size:18px;font-weight:900;
+  padding:20px 44px;border-radius:60px;text-decoration:none;
+  text-transform:uppercase;letter-spacing:1px;
+  box-shadow:0 8px 32px rgba(245,158,11,.55);
+  transition:all .3s ease;animation:pulse 2.5s ease-in-out infinite;
+}
+.btn-checkout:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 18px 44px rgba(245,158,11,.7);animation:none}
+.secure{margin-top:18px;color:#A78BFA;font-size:12px;display:flex;align-items:center;justify-content:center;gap:6px}
+
+/* FAQ */
+.s-faq{background:#fff;padding:80px 20px}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid #E5E7EB}
+.faq-q{
+  width:100%;background:none;border:none;text-align:left;
+  padding:22px 0;font-family:var(--fb);font-size:16px;font-weight:800;
+  color:var(--dark);cursor:pointer;display:flex;justify-content:space-between;
+  align-items:center;gap:12px;transition:color .3s;
+}
+.faq-q:hover{color:var(--p)}
+.faq-icon{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--lp);color:var(--p);font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:all .3s;font-family:var(--fb);
+}
+.faq-item.open .faq-icon{background:var(--p);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;color:var(--gray);font-size:14px;line-height:1.75}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:20px}
+
+/* FOOTER */
+footer{background:var(--dark);padding:44px 20px;text-align:center}
+.footer-logo{font-family:var(--fd);font-size:24px;color:#fff;margin-bottom:12px}
+.footer-tag{color:#9CA3AF;font-size:13px;margin-bottom:22px;max-width:380px;margin-left:auto;margin-right:auto;line-height:1.6}
+.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:18px}
+.footer-links a{color:#6B7280;font-size:13px;text-decoration:none;transition:color .3s}
+.footer-links a:hover{color:var(--acc)}
+.footer-copy{color:#374151;font-size:12px}
+
+@media(max-width:640px){
+  .hero{padding:40px 16px 56px}
+  .price-card{padding:32px 22px}
+  .btn-cta,.btn-cta2,.btn-checkout{font-size:15px;padding:16px 30px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BADGE -->
+<div class="top-badge">🎉 Versão 29.1 Disponível — Acesso Imediato!</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="stars" id="stars"></div>
+  <div class="container">
+    <div class="hero-badge">📖 Bíblia Play Kids</div>
+    <h1>Historinhas e Atividades Bíblicas Que <span>Moldam Corações</span> e Fortalecem a Fé dos Pequenos</h1>
+    <p>Uma maneira simples e envolvente de plantar valores eternos no coração dos seus filhos, com conteúdos que despertam curiosidade, prendem a atenção e fazem eles se encantarem com a Palavra de Deus.</p>
+    <img class="hero-img" src="https://qtbkvshbmqlszncxlcuc.supabase.co/storage/v1/object/public/dsl-uploads/sZAxO6RVOcZDR4Ev1t8XPnDNQqf1/b27a2a17-2324-4890-b701-63ca58323d6d.png" alt="Bíblia Play Kids" onerror="this.style.display='none'">
+    <a href="https://pay.kiwify.com.br/oJONq7a" class="btn-cta">QUERO ACESSAR AGORA! 🚀</a>
+    <p class="hero-meta">🔒 Acesso Vitalício · Sem Mensalidade · Pagamento Único</p>
+    <p class="hero-verse">✨ "Deixem as crianças virem a mim" — Mateus 19:14</p>
+    <div class="hero-urgency">⏳ Oferta de Lançamento: Menos de R$ 10,00 por tempo limitado!</div>
+  </div>
+</section>
+
+<!-- O QUE É -->
+<section class="s-what">
+  <div class="container">
+    <p class="s-label reveal">O produto</p>
+    <h2 class="s-title reveal">O que é a <span>Bíblia Play Kids?</span></h2>
+    <p class="s-sub reveal">Uma plataforma cristã e 100% segura que torna o aprendizado da Palavra em um momento divertido, inspirador e cheio da presença de Deus.</p>
+    <div class="feat-grid">
+      <div class="feat-card reveal">
+        <span class="feat-icon">🎬</span>
+        <h3>Vídeos Animados</h3>
+        <p>Mais de 70 historinhas bíblicas em vídeo animado que prendem a atenção e ensinam valores que ficam para sempre.</p>
+      </div>
+      <div class="feat-card reveal">
+        <span class="feat-icon">👧🏽</span>
+        <h3>Para Crianças</h3>
+        <p>Conteúdos criados especialmente para os pequenos, com linguagem simples, visual lúdico e aprendizado garantido.</p>
+      </div>
+      <div class="feat-card reveal">
+        <span class="feat-icon">🙌</span>
+        <h3>Apoio aos Pais</h3>
+        <p>Ideal para pais ocupados, educadores e igrejas que buscam conteúdo cristão de qualidade para os pequenos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BÔNUS -->
+<section class="s-bonus">
+  <div class="container">
+    <p class="s-label reveal">Surpresa especial</p>
+    <h2 class="s-title reveal">+7 BÔNUS INCRÍVEIS<br>que você ganha AGORA!</h2>
+    <p class="s-sub reveal">Tudo isso vem de graça com a sua compra do Bíblia Play Kids 29.1!</p>
+  </div>
+
+  <!-- Carousel -->
+  <div class="car-wrap">
+    <div class="car-track" id="carTrack">
+      <img class="car-img" src="https://qtbkvshbmqlszncxlcuc.supabase.co/storage/v1/object/public/dsl-uploads/sZAxO6RVOcZDR4Ev1t8XPnDNQqf1/df2ab898-3312-4da4-bfb4-b92eb618470f.png" alt="Amostra 1">
+      <img class="car-img" src="https://qtbkvshbmqlszncxlcuc.supabase.co/storage/v1/object/public/dsl-uploads/sZAxO6RVOcZDR4Ev1t8XPnDNQqf1/e23e2685-bd49-405e-9033-cf1a806b80d7.png" alt="Amostra 2">
+      <img class="car-img" src="https://qtbkvshbmqlszncxlcuc.supabase.co/storage/v1/object/public/dsl-uploads/sZAxO6RVOcZDR4Ev1t8XPnDNQqf1/3c3283df-4f59-4a70-a878-1b1566b46420.png" alt="Amostra 3">
+      <img class="car-img" src="https://qtbkvshbmqlszncxlcuc.supabase.co/storage/v1/object/public/dsl-uploads/sZAxO6RVOcZDR4Ev1t8XPnDNQqf1/f6b2f594-f4be-4391-9050-dd423be67f54.png" alt="Amostra 4">
+      <!-- duplicated for seamless loop -->
+      <img class="car-img" src="https://qtbkvshbmqlszncxlcuc.supabase.co/storage/v1/object/public/dsl-uploads/sZAxO6RVOcZDR4Ev1t8XPnDNQqf1/df2ab898-3312-4da4-bfb4-b92eb618470f.png" alt="Amostra 1">
+      <img class="car-img" src="https://qtbkvshbmqlszncxlcuc.supabase.co/storage/v1/object/public/dsl-uploads/sZAxO6RVOcZDR4Ev1t8XPnDNQqf1/e23e2685-bd49-405e-9033-cf1a806b80d7.png" alt="Amostra 2">
+      <img class="car-img" src="https://qtbkvshbmqlszncxlcuc.supabase.co/storage/v1/object/public/dsl-uploads/sZAxO6RVOcZDR4Ev1t8XPnDNQqf1/3c3283df-4f59-4a70-a878-1b1566b46420.png" alt="Amostra 3">
+      <img class="car-img" src="https://qtbkvshbmqlszncxlcuc.supabase.co/storage/v1/object/public/dsl-uploads/sZAxO6RVOcZDR4Ev1t8XPnDNQqf1/f6b2f594-f4be-4391-9050-dd423be67f54.png" alt="Amostra 4">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="bonus-grid">
+      <div class="bonus-card reveal">
+        <div class="bonus-num">1</div>
+        <div>
+          <h3>70+ Historinhas em Livrinho Digital</h3>
+          <p>Perfeito para quem ama a leitura! Acesse direto do celular ou tablet. Qualquer momento vira uma oportunidade de aprendizado bíblico!</p>
+        </div>
+      </div>
+      <div class="bonus-card reveal">
+        <div class="bonus-num">2</div>
+        <div>
+          <h3>500+ Atividades Bíblicas</h3>
+          <p>Atividades criativas e envolventes baseadas nas historinhas, para fixar os ensinamentos da Palavra de forma leve e divertida!</p>
+        </div>
+      </div>
+      <div class="bonus-card reveal">
+        <div class="bonus-num">3</div>
+        <div>
+          <h3>20 Milagres de Jesus</h3>
+          <p>Os 20 milagres mais incríveis de Jesus ilustrados e adaptados para crianças, mostrando o poder e o amor de Cristo!</p>
+        </div>
+      </div>
+      <div class="bonus-card reveal">
+        <div class="bonus-num">4</div>
+        <div>
+          <h3>20 Parábolas de Jesus</h3>
+          <p>As 20 parábolas mais conhecidas, ilustradas e adaptadas para que as crianças compreendam ensinamentos profundos de forma simples.</p>
+        </div>
+      </div>
+      <div class="bonus-card reveal">
+        <div class="bonus-num">5</div>
+        <div>
+          <h3>30 Orações com Versículos</h3>
+          <p>Orações prontas com versículos bíblicos para guiar as crianças em diferentes momentos do dia. Cultive o hábito da oração desde cedo!</p>
+        </div>
+      </div>
+      <div class="bonus-card reveal">
+        <div class="bonus-num">6</div>
+        <div>
+          <h3>Salmos: Palavras do Coração</h3>
+          <p>Uma seleção especial de Salmos para serem lidos em família, aproximando as crianças da Palavra de Deus.</p>
+        </div>
+      </div>
+      <div class="bonus-card reveal">
+        <div class="bonus-num">7</div>
+        <div>
+          <h3>Quiz Bíblico Interativo</h3>
+          <p>Questões divertidas sobre personagens e ensinamentos bíblicos. Perfeito para testar conhecimentos de forma super divertida!</p>
+        </div>
+      </div>
+    </div>
+    <a href="https://pay.kiwify.com.br/oJONq7a" class="btn-cta2 reveal">🎁 GARANTIR MEUS BÔNUS AGORA!</a>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="s-test">
+  <div class="container">
+    <p class="s-label reveal">Resultados reais</p>
+    <h2 class="s-title reveal">O que os pais e pastores<br>estão <span>dizendo...</span></h2>
+    <div class="test-grid" style="margin-top:44px">
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"Ter um material adaptado foi o diferencial. Minha filha Alice tem TEA e se adaptou muito bem à linguagem visual e direta dos vídeos. Recomendo muito!"</p>
+        <div class="test-author">
+          <div class="author-av">RO</div>
+          <div>
+            <div class="author-name">Pr. Ricardo Oliveira</div>
+            <div class="author-role">Ministério Infantil</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"Ter um material adaptado foi o diferencial. Minha filha Alice tem TEA e se adaptou muito bem à linguagem visual e direta dos vídeos. Recomendo muito!"</p>
+        <div class="test-author">
+          <div class="author-av">AB</div>
+          <div>
+            <div class="author-name">Ana Beatriz</div>
+            <div class="author-role">Mãe da Alice (6 anos — TEA)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="social-proof reveal">
+      🎉 +200 pais e líderes já transformaram o momento bíblico dos filhos com o Bíblia Play Kids
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="s-price">
+  <div class="container">
+    <div class="price-label reveal">⚡ Oferta Especial por Tempo Limitado</div>
+    <h2 class="price-title reveal">ACESSO COMPLETO VITALÍCIO</h2>
+    <div class="price-card reveal">
+      <ul class="price-feats">
+        <li>Acesso Vitalício sem mensalidade</li>
+        <li>+70 Vídeos de Historinhas Bíblicas</li>
+        <li>+500 Atividades Bíblicas Interativas</li>
+        <li>Material adaptado para TEA e TDAH</li>
+        <li>Acesso Offline via App</li>
+        <li>+7 Bônus Exclusivos incluídos</li>
+      </ul>
+      <p class="price-old">De: R$ 97,00</p>
+      <p style="color:#C4B5FD;font-size:14px;margin-bottom:4px">Por apenas:</p>
+      <div class="price-val"><sup>R$</sup>9<sup>,90</sup></div>
+      <p class="price-note">💳 Pagamento Único · Acesso Imediato</p>
+      <a href="https://pay.kiwify.com.br/oJONq7a" class="btn-checkout">🔓 LIBERAR MEU ACESSO AGORA!</a>
+      <div class="secure">🔒 Pagamento 100% seguro via Kiwify</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s-faq">
+  <div class="container">
+    <p class="s-label reveal">Ficou com dúvidas?</p>
+    <h2 class="s-title reveal">Perguntas <span>Frequentes</span></h2>
+    <div class="faq-list" style="margin-top:44px">
+      <div class="faq-item">
+        <button class="faq-q">Como recebo o acesso? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Imediatamente após a confirmação do pagamento você receberá um e-mail com o link de acesso. O conteúdo fica disponível 24h por dia, 7 dias por semana, em qualquer dispositivo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">O pagamento é mensal? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Não! É um único pagamento de R$9,90 e você tem acesso vitalício a todo o conteúdo, para sempre. Sem mensalidades, sem surpresas.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">As crianças podem usar sozinhas? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Sim! O conteúdo foi desenvolvido com linguagem simples e visual lúdico, adequado para crianças a partir dos 3 anos. A plataforma é intuitiva e segura para os pequenos.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Funciona no celular? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Sim! Funciona perfeitamente no celular, tablet ou computador. Também é possível baixar os conteúdos para acesso offline quando não houver internet.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">📖 Bíblia Play Kids</div>
+  <p class="footer-tag">Plantando sementes de fé e valores eternos no coração da nova geração.</p>
+  <div class="footer-links">
+    <a href="#">Políticas de Privacidade</a>
+    <a href="#">Termos de Uso</a>
+  </div>
+  <p class="footer-copy">Copyright © 2026 Bíblia Play Kids. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+// Stars
+const stars = document.getElementById('stars');
+for(let i=0;i<40;i++){
+  const s=document.createElement('div');
+  s.className='star';
+  const sz=Math.random()*4+2;
+  s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;opacity:${Math.random()*.6+.1}`;
+  stars.appendChild(s);
+}
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item');
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open)item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
